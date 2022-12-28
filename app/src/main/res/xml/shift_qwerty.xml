@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
-    android:keyWidth="15%p"
-    android:keyHeight="55dp">
+    android:keyWidth="10%p"
+    android:keyHeight="56dp"
+    android:horizontalGap="5px"
+    android:verticalGap="5px"
+    >
 
     <Row>
-        <Key android:keyLabel="ЦI" android:keyEdgeFlags="left" android:horizontalGap="5%" android:codes="1094, 73"/>
-        <Key android:keyLabel="Кь" android:codes="65,73"/>
-        <Key android:keyLabel="КI" android:codes="234, 73"/>
-        <Key android:keyLabel="Къ" android:codes="234, 250"/>
-        <Key android:keyLabel="ПI" android:codes="239, 73"/>
-        <Key android:keyLabel="Гъ" android:codes="227, 250"/>
-        <Key android:keyLabel="Гь" android:codes="227, 252"/>
-        <Key android:keyLabel="Хь" android:codes="1"/>
-        <Key android:keyLabel="Хъ" android:keyEdgeFlags="right" android:codes="1093, 250"/>
+        <Key android:keyLabel="ЦI" android:keyEdgeFlags="left" android:codes="1062,73"/>
+        <Key android:keyLabel="Кь" android:codes="1050,1100"/>
+        <Key android:keyLabel="КI" android:codes="1050,73"/>
+        <Key android:keyLabel="Къ" android:codes="1050,1098"/>
+        <Key android:keyLabel="ПI" android:codes="1055,73"/>
+        <Key android:keyLabel="Гъ" android:codes="1043,1098"/>
+        <Key android:keyLabel="Гь" android:codes="1043,1100"/>
+        <Key android:keyLabel="Хь" android:codes="1061,1100"/>
+        <Key android:keyLabel="Хъ" android:keyEdgeFlags="right" android:codes="1061,1098"/>
     </Row>
 
     <Row>
@@ -24,14 +27,14 @@
         <Key android:keyLabel="Н" android:codes="1053"/>
         <Key android:keyLabel="Г" android:codes="1043"/>
         <Key android:keyLabel="Ш" android:codes="1064"/>
-        <Key android:keyLabel="ТI" android:codes="1058, 73"/>
+        <Key android:keyLabel="ТI" android:codes="1058,73"/>
         <Key android:keyLabel="З" android:codes="1047"/>
         <Key android:keyLabel="Х" android:keyEdgeFlags="right" android:codes="1061"/>
     </Row>
 
     <Row>
         <Key android:keyLabel="Ф" android:keyEdgeFlags="left" android:codes="1060"/>
-        <Key android:keyLabel="ЧI" android:codes="1063, 73"/>
+        <Key android:keyLabel="ЧI" android:codes="1063,73"/>
         <Key android:keyLabel="В" android:codes="1042"/>
         <Key android:keyLabel="А" android:codes="1040"/>
         <Key android:keyLabel="П" android:codes="1055"/>
@@ -44,7 +47,7 @@
     </Row>
 
     <Row>
-        <Key android:keyIcon="@drawable/black_shift" android:keyWidth="15%p" android:keyEdgeFlags="left" android:codes="-1"/>
+        <Key android:keyIcon="@drawable/black_shift" android:keyEdgeFlags="left" android:codes="-1"/>
         <Key android:keyLabel="Я" android:codes="1071"/>
         <Key android:keyLabel="Ч" android:codes="1063"/>
         <Key android:keyLabel="С" android:codes="1057"/>
@@ -53,17 +56,17 @@
         <Key android:keyLabel="Т" android:codes="1058"/>
         <Key android:keyLabel="Ъ" android:codes="1066"/>
         <Key android:keyLabel="Б" android:codes="1041"/>
-        <Key android:keyLabel="Уь" android:codes="1059, 252"/>
-        <Key android:keyIcon="@drawable/ic_backspace" android:isRepeatable="true" android:keyWidth="15%p" android:keyEdgeFlags="right" android:codes="-5"/>
+        <Key android:keyLabel="Уь" android:codes="1059,1100"/>
+        <Key android:keyIcon="@drawable/ic_backspace" android:isRepeatable="true" android:keyEdgeFlags="right" android:codes="-5"/>
     </Row>
 
     <Row android:rowEdgeFlags="bottom">
-        <Key android:keyLabel="!#1" android:keyEdgeFlags="left" android:horizontalGap="2%" android:keyWidth="15%p" android:codes="-2"/>
+        <Key android:keyLabel="!#1" android:keyEdgeFlags="left" android:codes="-2"/>
         <Key android:keyLabel="," android:codes="44"/>
         <Key android:keyIcon="@drawable/switch_language" android:codes="44"/>
         <Key android:keyLabel="Лезги чIал" android:isRepeatable="true" android:keyWidth="45%p" android:codes="32"/>
         <Key android:keyLabel="." android:codes="46"/>
-        <Key android:keyIcon="@drawable/ic_return" android:keyWidth="20%p" android:keyEdgeFlags="right" android:codes="-4"/>
+        <Key android:keyIcon="@drawable/ic_return" android:keyEdgeFlags="right" android:codes="-4"/>
     </Row>
 
 

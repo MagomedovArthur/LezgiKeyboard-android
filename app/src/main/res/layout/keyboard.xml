@@ -6,7 +6,7 @@
     android:id="@+id/keyboard"
     android:layout_alignParentBottom="true"
     android:keyTextColor="#000000"
-    android:background="#ebeff2"
+    android:background="@color/black"
     android:keyBackground="@drawable/key_background"
     android:keyPreviewLayout="@layout/key_preview"
     >

@@ -4,6 +4,8 @@ import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
 import android.media.AudioManager;
+import android.text.Editable;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputConnection;
@@ -104,10 +106,10 @@ public class LezgiKeyboard extends InputMethodService implements KeyboardView.On
         }
     }
 
-    @Override
+    @Override //
     public void onKey(int primaryCode, int[] keyCodes) {
         InputConnection inputConnection = getCurrentInputConnection();
-        switchKeyboard(inputConnection, primaryCode);
+        switchKeyboard(inputConnection, primaryCode); //метод переключения клавиатуры (шифт, до символы)
         switch (primaryCode) {
             case Keyboard.KEYCODE_DELETE: // активация кнопки BACKSPACE
                 inputConnection.deleteSurroundingText(1, 0);
@@ -117,6 +119,18 @@ public class LezgiKeyboard extends InputMethodService implements KeyboardView.On
                 break;
             default:
                 if (primaryCode == -2 || primaryCode == -1) {
+                    return;
+                }
+//                System.out.println(primaryCode);
+                System.out.println(keyCodes[0]);
+                System.out.println(keyCodes[1]);
+                if (keyCodes[1] > 0) {
+                    char symbolOne = (char) keyCodes[0];
+                    char symbolTwo = (char) keyCodes[1];
+                    String one = String.valueOf(symbolOne);
+                    String two = String.valueOf(symbolTwo);
+                    inputConnection.commitText(one + two, 1);
+                    //  inputConnection.commitText(two, 1);
                     return;
                 }
                 char c = (char) primaryCode;
