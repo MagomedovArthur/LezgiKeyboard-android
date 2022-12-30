@@ -39,29 +39,15 @@ public class LezgiKeyboard extends InputMethodService implements KeyboardView.On
 
     }
 
-    private void switchKeyboard(InputConnection inputConnection, int i) { // 5-й урок
-//        if ((i != -2) && (i != -1)) {
-//            if ((key_family != 0) && (key_family != i) && (i >= key_family - 5 && i <= key_family + 2)) {
-//                if (first_time_selected == 0) {
-//                    inputConnection.deleteSurroundingText(1, 0);
-//                }
-//                first_time_selected++;
-//                return;
-//            }
-//        }
-
+    private void switchKeyboard(InputConnection inputConnection, int i) {
         switch (i) {
             case -1:
                 if (shift_selected) {
-                    //    key_family = -1;
-                    //    first_time_selected = 0;
                     shift_selected = false;
                     keyboard = new Keyboard(this, R.xml.qwerty);
                     keyboardView.setKeyboard(keyboard);
                     keyboardView.setOnKeyboardActionListener(this);
                 } else {
-                    //     key_family = -1;
-                    //     first_time_selected = 0;
                     shift_selected = true;
                     keyboard = new Keyboard(this, R.xml.shift_qwerty);
                     keyboardView.setKeyboard(keyboard);
@@ -70,15 +56,11 @@ public class LezgiKeyboard extends InputMethodService implements KeyboardView.On
                 break;
             case -2:
                 if (number_selected) {
-                    // key_family = -2;
-                    //  first_time_selected = 0;
                     number_selected = false;
                     keyboard = new Keyboard(this, R.xml.qwerty);
                     keyboardView.setKeyboard(keyboard);
                     keyboardView.setOnKeyboardActionListener(this);
                 } else {
-                    //    key_family = -2;
-                    //     first_time_selected = 0;
                     number_selected = true;
                     keyboard = new Keyboard(this, R.xml.numbers_symbols);
                     keyboardView.setKeyboard(keyboard);
@@ -88,15 +70,11 @@ public class LezgiKeyboard extends InputMethodService implements KeyboardView.On
 
             case -9:
                 if (symbol_selected) {
-                    // key_family = -2;
-                    //  first_time_selected = 0;
                     symbol_selected = false;
                     keyboard = new Keyboard(this, R.xml.numbers_symbols);
                     keyboardView.setKeyboard(keyboard);
                     keyboardView.setOnKeyboardActionListener(this);
                 } else {
-                    //    key_family = -2;
-                    //     first_time_selected = 0;
                     symbol_selected = true;
                     keyboard = new Keyboard(this, R.xml.numbers_symbols_2);
                     keyboardView.setKeyboard(keyboard);
@@ -106,10 +84,11 @@ public class LezgiKeyboard extends InputMethodService implements KeyboardView.On
         }
     }
 
-    @Override //
+    @Override
     public void onKey(int primaryCode, int[] keyCodes) {
         InputConnection inputConnection = getCurrentInputConnection();
         switchKeyboard(inputConnection, primaryCode); //метод переключения клавиатуры (шифт, до символы)
+        playClick(primaryCode);
         switch (primaryCode) {
             case Keyboard.KEYCODE_DELETE: // активация кнопки BACKSPACE
                 inputConnection.deleteSurroundingText(1, 0);
